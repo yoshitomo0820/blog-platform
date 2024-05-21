@@ -1,6 +1,9 @@
+@charset "UTF-8";
+
 .App {
   text-align: center;
 }
+/* 
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +38,62 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+/* html {
+  font-size: 100%;
+} */
+body {
+  color: #333;
+  font-size: 0.75rem;
+  font-family: 'Raleway', sans-serif;
+}
+a {
+  font-size: 20px;
+  color: #333;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+
+.site-title {
+  width: 120px;
+  line-height: 1px;
+  padding: 10px 0;
+}
+
+.wrapper {
+  max-width: 1960px;
+  margin: 0 auto 100px auto;
+  padding: 0 4%;
+  text-align: center;
+}
+
+/*---------------------------
+ヘッダー
+-----------------------------*/
+#header {
+  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#header ul {
+  display: flex;
+  padding: 20px 0;
+}
+#header li {
+  margin-left: 60px;
+}
+#header li a {
+  color: #24292e;
+}
+#header li a:hover {
+  opacity: 0.7;
 }

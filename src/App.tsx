@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import NewPost from './pages/NewPost';
+import EditPost from './pages/EditPost';
+import { PostsProvider } from './contexts/PostsContext';
 
-function App() {
+import './App.css'; // スタイルシートをインポート
+
+const Header: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <header id='header' className='wrapper'>
+      <h1 className = "site-title">WEBLOG</h1>
+      <nav>
+        <ul>
+          <li><Link to="/">マイページ</Link></li>
+          <li><Link to="/new">新規作成</Link></li>
+        </ul>
+      </nav>
+    </header>
   );
-}
+};
+
+const App: React.FC = () => {
+  return (
+    <PostsProvider>
+      <Router>
+        <Header /> {/* Headerをここに配置 */}
+        <div>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/new" element={<NewPost />} />
+            <Route path="/edit/:id" element={<EditPost />} />
+          </Routes>
+        </div>
+      </Router>
+    </PostsProvider>
+  );
+};
 
 export default App;

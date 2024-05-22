@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { PostsContext, Post } from '../contexts/PostsContext';
-import '../styles/EditPostStyles.css'; // スタイルシートをインポート
+import '../styles/EditPostStyle.css'; // スタイルシートをインポート
 
 
 

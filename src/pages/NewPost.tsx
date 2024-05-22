@@ -22,6 +22,7 @@ const NewPost: React.FC = () => {
     if (image) {
       imageUrl = URL.createObjectURL(image); // 画像が存在する場合、URLを生成
     }
+    
 
     // 新しい投稿のデータを作成
     const newPost: NewPostData = {
@@ -50,6 +51,7 @@ const NewPost: React.FC = () => {
     if (file) {
       setImage(file);
     }
+
   };
 
   return (
@@ -58,14 +60,14 @@ const NewPost: React.FC = () => {
       <form onSubmit={onSubmit}>
         <div className="form-group">
           <label>タイトル : </label>
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required/>
         </div>
         <div className="form-group">
           <label>コンテンツ : </label>
           <textarea value={content} onChange={(e) => setContent(e.target.value)}></textarea>
         </div>
         <div className="form-group">
-          <label>Image : </label>
+          <label>サムネイル用画像 : </label>
           <input type="file" accept="image/*" onChange={handleImageChange} />
         </div>
         <button type="submit" className="submit-btn">送信</button>

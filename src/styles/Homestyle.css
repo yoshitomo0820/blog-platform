@@ -1,4 +1,4 @@
-.container {
+/* .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
@@ -8,6 +8,10 @@ h1 {
   font-size: 36px;
   color: #333;
   margin-bottom: 20px;
+}
+
+li{
+  list-style: none;
 }
 
 .post {
@@ -29,10 +33,58 @@ h1 {
   color: #666;
   margin-bottom: 10px;
 }
+*/
+/* .post img {
+  
+}  */
 
-.post img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  margin-bottom: 10px;
+
+.postlist{
+  display: flex;
+  /* flex-direction: row-reverse;  */
+  margin: auto;
+  list-style: none;
+  flex-wrap: wrap;
 }
+
+.postlistblock{
+  border: 1px solid;
+  /* margin-right: 60px; */
+  width: 250px;
+  height: 260px;
+  overflow-y: scroll;
+  /* overflow-x: hidden; */
+  overflow-wrap: break-word;
+  margin:0 20px 20px 0;
+}
+
+.postlistblock:hover
+{
+  opacity: 0.5;
+}
+
+.postlist img{
+  height: 200px;
+  width: 250px;
+  object-fit: cover;
+  /* margin:0;padding:0 */
+}
+
+.postlist h3{
+  border-top: 1px solid;
+  padding: 10px;
+  margin:0;
+  font-size: 20px;
+  height: 30px;
+  background-color: blanchedalmond;
+}
+
+.postlist p{
+  margin: 0;
+  border-top: 1px solid;
+  padding: 10px;
+  background-color: aliceblue;
+  font-size: 15px;
+  height: 30px;
+}
+

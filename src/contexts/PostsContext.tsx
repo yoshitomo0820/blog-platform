@@ -1,4 +1,4 @@
-import React, { createContext, useState, ReactNode } from 'react';
+import React, { createContext, useState,useEffect, ReactNode } from 'react';
 
 export interface Post {  // 'export'を追加して他のファイルでインポート可能にします
   id: number;
@@ -18,6 +18,18 @@ export const PostsContext = createContext<PostsContextType | undefined>(undefine
 
 export const PostsProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [posts, setPosts] = useState<Post[]>([]);
+
+  // ローカルストレージからデータを読み込む
+  useEffect(() => {
+    const storedPosts = localStorage.getItem('posts');
+    if (storedPosts) {
+      setPosts(JSON.parse(storedPosts));
+    }
+  }, []);
+  
+  useEffect(() => {
+    localStorage.setItem('posts', JSON.stringify(posts))
+  }, [posts])
 
   const addPost = (post: Omit<Post, 'id'>) => {
     const newPost = { id: Date.now(), ...post };

@@ -37,7 +37,6 @@ const NewPost: React.FC = () => {
 
     try {
       // 画像をアップロードするなどのAPI呼び出しを行う
-
       navigate('/'); // ホームページに遷移
     } catch (error) {
       console.error('Error:', error);

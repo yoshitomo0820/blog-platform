@@ -27,6 +27,7 @@ export const PostsProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     }
   }, []);
   
+  //ローカルストレージにデータを入れる
   useEffect(() => {
     localStorage.setItem('posts', JSON.stringify(posts))
   }, [posts])

@@ -25,7 +25,7 @@ const App: React.FC = () => {
   return (
     <PostsProvider>
       <Router>
-        <Header /> {/* Headerをここに配置 */}
+        <Header />
         <div>
           <Routes>
             <Route path="/" element={<Home />} />

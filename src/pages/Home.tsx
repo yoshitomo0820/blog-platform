@@ -14,7 +14,7 @@ const Home: React.FC = () => {
 
   return (
     <div className = "container">
-      <h1>Blog Posts</h1>
+      <h1>投稿リスト</h1>
       <PostList posts={posts} />
     </div>
   );
